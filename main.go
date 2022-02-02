@@ -17,7 +17,7 @@ const (
 	fibError     = "That's not right"
 	webServerAddress = "127.0.0.1:3000"
 	finalValue = 2111485077978050
-	nextPuzzle = "http://127.0.0.1:3000/"
+	nextPuzzle = "https://105250e6794362f42e512af9462c1684.valencik.com"
 )
 
 var (

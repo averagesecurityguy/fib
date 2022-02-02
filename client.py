@@ -3,7 +3,7 @@
 import requests
 import re
 
-base = 'http://127.0.0.1:3000'
+base = 'https://puzzle.pwn.cx'
 re_action = re.compile(r'action="/([0-9]+)/([0-9]+)">')
 ses = ''
 cur = 0
