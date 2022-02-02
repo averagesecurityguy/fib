@@ -1,0 +1,27 @@
+{{ define "layout" }}
+<!doctype html>
+<html>
+<head>
+    <title>Fibonacci</title>
+    <link rel="stylesheet" href="/static/site.css" />
+</head>
+<body>
+
+  <header>
+    <h1><a href="/">Fibonacci</a></h1>
+  </header>
+
+
+  <main class="content">
+    {{ template "content" . }}
+  </main>
+
+
+  <footer>
+    <p>&copy; Copyright 2022 Averagesecurityguy</p>
+  </footer>
+
+
+</body>
+</html>
+{{ end }}

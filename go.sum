@@ -1,0 +1,4 @@
+github.com/asggo/random v0.0.0-20210803154528-d84c3ae3b767 h1:yhMc9WdAc2mml6Dr2ZCC13N6wW4QqDLKJog8T9TANno=
+github.com/asggo/random v0.0.0-20210803154528-d84c3ae3b767/go.mod h1:uwrudrqYqHOHB3Sgcxtc9VGQW5ZWlGLtu1pw8POzjz4=
+github.com/gorilla/mux v1.8.0 h1:i40aqfkR1h2SlN9hojwV5ZA91wcXFOvkdNIeFDP5koI=
+github.com/gorilla/mux v1.8.0/go.mod h1:DVbg23sWSpFRCP0SfiEN6jmj59UnW/n46BH5rLB71So=
