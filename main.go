@@ -17,7 +17,7 @@ const (
 	fibError     = "That's not right"
 	webServerAddress = "127.0.0.1:3000"
 	finalValue = 2111485077978050
-	nextPuzzle = "http://127.0.0.1:8080/"
+	nextPuzzle = "http://127.0.0.1:3000/"
 )
 
 var (
@@ -62,7 +62,7 @@ func fib(w http.ResponseWriter, r *http.Request) {
 
 	// Make sure we have not reached the final value
 	if f.curr >= finalValue {
-		http.Redirect(w, r, nextPuzzle, http.StatusSeeOther)
+		http.Redirect(w, r, nextPuzzle, http.StatusFound)
 		return
 	}
 
