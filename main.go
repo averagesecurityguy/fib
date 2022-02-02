@@ -67,7 +67,7 @@ func fib(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Convert our value to a number and make sure it is next
-	curr, _ := strconv.Atoi(val)
+	curr, _ := strconv.ParseUint(val, 10, 64)
 	if curr != f.curr {
 		errorHandler(w, http.StatusBadRequest, fibError)
 		return
