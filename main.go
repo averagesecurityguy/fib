@@ -14,10 +14,10 @@ import (
 
 const (
 	notFoundError    = "Page not found"
-	fibError     = "That's not right"
+	fibError         = "That's not right"
 	webServerAddress = "127.0.0.1:3000"
-	finalValue = 2111485077978050
-	nextPuzzle = "https://105250e6794362f42e512af9462c1684.valencik.com"
+	finalValue       = 2111485077978050
+	nextPuzzle       = "https://105250e6794362f42e512af9462c1684.valencik.com"
 )
 
 var (
@@ -76,13 +76,26 @@ func fib(w http.ResponseWriter, r *http.Request) {
 	retVal := f.next
 
 	// Update the Fibonacci value to take our turn
-	f.Update()  // Take our turn
-	f.Update()  // Take their turn
+	f.Update() // Take our turn
+	f.Update() // Take their turn
 
 	sessions[sessId] = f
 
+	msg := ""
+	switch {
+	case retVal == 5:
+		msg = "Nice work, keep going."
+	case retVal == 34:
+		msg = "I told you it was beautiful. Did you know it's infinite as well?"
+	case retVal == 89:
+		msg = "If you are still doing this by hand. You are going to be here a while."
+	default:
+	}
+
 	w.Header().Add("next", fmt.Sprintf("%d", retVal))
-	fibTmpl.ExecuteTemplate(w, "layout", retVal)
+	w.Header().Add("message", msg)
+
+	fibTmpl.ExecuteTemplate(w, "layout", fmt.Sprintf("%d  %s", retVal, msg))
 }
 
 func index(w http.ResponseWriter, r *http.Request) {

@@ -3,7 +3,7 @@
 import requests
 import re
 
-base = 'https://puzzle.pwn.cx'
+base = 'http://127.0.0.1:3000'
 re_action = re.compile(r'action="/([0-9]+)/([0-9]+)">')
 ses = ''
 cur = 0
@@ -25,6 +25,10 @@ if __name__ == '__main__':
 		if resp.status_code == 302:
 			print(resp.headers['Location'])
 			break
+
+		msg = resp.headers['message']
+		if msg != '':
+			print(msg)
 
 		nex = int(resp.headers['next'])
 		cur = cur + nex
